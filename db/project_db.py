@@ -17,7 +17,7 @@ project = sqlalchemy.Table(
     sqlalchemy.Column("collaboratorsid", sqlalchemy.String),
     sqlalchemy.Column("photosid", sqlalchemy.String),
     sqlalchemy.Column("phases", sqlalchemy.Integer),
-    sqlalchemy.Column("currentphase", sqlalchemy.Integer),
+    sqlalchemy.Column("donorsid", sqlalchemy.Integer),
     sqlalchemy.Column("serviceid", sqlalchemy.String),
 
     # sqlalchemy.Column("services" ),

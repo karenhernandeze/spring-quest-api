@@ -30,7 +30,7 @@ class ProjectIn(BaseModel):
     collaboratorsId: Optional[str] = None
     photosId: Optional[str] = None
     phases: Optional[int] = None
-    currentPhase: Optional[int] = None
+    donorsid: Optional[int] = None
     serviceId: Optional[str] = None
     class Config:
         schema_extra = {
@@ -46,7 +46,7 @@ class ProjectIn(BaseModel):
                 "collaboratorsId": "1111111",
                 "photosId": "1111111",
                 "phases": 2,
-                "currentPhase": 1,
+                "donorsid": "11111111",
                 "serviceId": "1111111"
             }
         }
@@ -63,6 +63,6 @@ class ProjectId(BaseModel):
     collaboratorsId: Optional[str] = None
     photosId: Optional[str] = None
     phases: Optional[int] = None
-    currentPhase: Optional[int] = None
+    donorsid: Optional[int] = None
     serviceId: Optional[str] = None
 
