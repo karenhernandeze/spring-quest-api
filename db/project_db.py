@@ -9,6 +9,7 @@ project = sqlalchemy.Table(
     sqlalchemy.Column("userid", sqlalchemy.String),
     sqlalchemy.Column("projectname", sqlalchemy.String),
     sqlalchemy.Column("projecttype", sqlalchemy.String),
+    sqlalchemy.Column("description", sqlalchemy.String),
     sqlalchemy.Column("exepctedstartdate", sqlalchemy.Date),
     sqlalchemy.Column("exepctedenddate", sqlalchemy.Date),
     sqlalchemy.Column("country", sqlalchemy.String),

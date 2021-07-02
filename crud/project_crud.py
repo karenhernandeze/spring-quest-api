@@ -36,6 +36,7 @@ class CRUDProject():
             "userid": obj_in.userId,
             "projectname": obj_in.projectName,
             "projecttype": obj_in.projectType,
+            "description": obj_in.description,
             "exepctedstartdate": obj_in.exepctedStartDate,
             "exepctedenddate": obj_in.exepctedEndDate,
             "country": obj_in.country,
@@ -44,7 +45,7 @@ class CRUDProject():
             "collaboratorsid": obj_in.collaboratorsId, 
             "photosid": obj_in.photosId,
             "phases": obj_in.phases,
-            "currentphase": obj_in.currentPhase,
+            "donorsid": obj_in.donorsid,
             "serviceid": obj_in.serviceId
         }
         new_project = await database.execute(query=query, values=values)

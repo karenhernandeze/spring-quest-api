@@ -7,6 +7,7 @@ class Project(BaseModel):
     userId: Optional[str] = None
     projectName: Optional[str] = None
     projectType: Optional[str] = None
+    description: Optional[str] = None
     exepctedStartDate: Optional[date] = None
     exepctedEndDate: Optional[date] = None
     country: Optional[str] = None
@@ -15,13 +16,14 @@ class Project(BaseModel):
     collaboratorsId: Optional[str] = None
     photosId: Optional[str] = None
     phases: Optional[int] = None
-    currentPhase: Optional[int] = None
+    donorsid: Optional[str] = None
     serviceId: Optional[str] = None
 
 class ProjectIn(BaseModel):
     userId: Optional[str] = None
     projectName: Optional[str] = None
     projectType: Optional[str] = None
+    description: Optional[str] = None
     exepctedStartDate: Optional[date] = None
     exepctedEndDate: Optional[date] = None
     country: Optional[str] = None
@@ -30,7 +32,7 @@ class ProjectIn(BaseModel):
     collaboratorsId: Optional[str] = None
     photosId: Optional[str] = None
     phases: Optional[int] = None
-    donorsid: Optional[int] = None
+    donorsid: Optional[str] = None
     serviceId: Optional[str] = None
     class Config:
         schema_extra = {
@@ -38,6 +40,7 @@ class ProjectIn(BaseModel):
                 "userId": "2615283",
                 "projectName": "This is My New Project",
                 "projectType": "angel",
+                "description": "Project Description",
                 "exepctedStartDate": "2021-06-20",
                 "exepctedEndDate": "2021-08-20",
                 "country": "Mexico",
@@ -55,6 +58,7 @@ class ProjectId(BaseModel):
     userId: Optional[str] = None
     projectName: Optional[str] = None
     projectType: Optional[str] = None
+    description: Optional[str] = None
     exepctedStartDate: date
     exepctedEndDate: date
     country: Optional[str] = None
@@ -63,6 +67,6 @@ class ProjectId(BaseModel):
     collaboratorsId: Optional[str] = None
     photosId: Optional[str] = None
     phases: Optional[int] = None
-    donorsid: Optional[int] = None
+    donorsid: Optional[str] = None
     serviceId: Optional[str] = None
 
