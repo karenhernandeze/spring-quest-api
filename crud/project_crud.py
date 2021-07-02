@@ -19,6 +19,15 @@ class CRUDProject():
         await database.disconnect()
         return serialized_hours
 
+    async def get_all_projects_by_user_id(request: Request, user_id: str) -> Optional[Project]:
+        query = project.select().where(project.c.userid == user_id)
+        if not database.is_connected:
+            await database.connect()
+        projects = await database.fetch_all(query)
+        serialized_projects = jsonable_encoder(projects)
+        await database.disconnect()
+        return serialized_projects
+
     async def post_project(request: Request, obj_in: ProjectIn) -> Optional[Project]:
         if not database.is_connected:
             await database.connect()
