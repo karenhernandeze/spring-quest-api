@@ -1,5 +1,5 @@
 from datetime import date
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel
 
 class Project(BaseModel):
@@ -13,7 +13,7 @@ class Project(BaseModel):
     country: Optional[str] = None
     city: Optional[str] = None
     categoryId: Optional[str] = None
-    collaboratorsId: Optional[str] = None
+    collaboratorsId: Optional[List[int]] = None
     photosId: Optional[str] = None
     phases: Optional[int] = None
     donorsid: Optional[str] = None
@@ -29,7 +29,7 @@ class ProjectIn(BaseModel):
     country: Optional[str] = None
     city: Optional[str] = None
     categoryId: Optional[str] = None
-    collaboratorsId: Optional[str] = None
+    collaboratorsId: Optional[List[int]] = None
     photosId: Optional[str] = None
     phases: Optional[int] = None
     donorsid: Optional[str] = None
@@ -46,7 +46,7 @@ class ProjectIn(BaseModel):
                 "country": "Mexico",
                 "city": "Monterrey",
                 "categoryId": "1111111",
-                "collaboratorsId": "1111111",
+                "collaboratorsId": [1,2,3],
                 "photosId": "1111111",
                 "phases": 2,
                 "donorsid": "11111111",
@@ -64,7 +64,7 @@ class ProjectId(BaseModel):
     country: Optional[str] = None
     city: Optional[str] = None
     categoryId: Optional[str] = None
-    collaboratorsId: Optional[str] = None
+    collaboratorsId: Optional[List[int]] = None
     photosId: Optional[str] = None
     phases: Optional[int] = None
     donorsid: Optional[str] = None

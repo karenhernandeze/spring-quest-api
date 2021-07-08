@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 import databases
 import sqlalchemy
-from router import projects_router, users_router
+from router import projects_router, users_router, categories_router
 
 # CONNECTING TO DB 
 
@@ -55,3 +55,4 @@ def hello():
 
 app.include_router(router=projects_router.router) 
 app.include_router(router=users_router.router) 
+app.include_router(router=categories_router.router) 
