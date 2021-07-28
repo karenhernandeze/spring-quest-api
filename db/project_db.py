@@ -1,5 +1,5 @@
 import sqlalchemy
-from sqlalchemy.sql.sqltypes import Integer
+from sqlalchemy.sql.sqltypes import Integer, String
 
 metadata = sqlalchemy.MetaData()
 
@@ -15,11 +15,11 @@ project = sqlalchemy.Table(
     sqlalchemy.Column("exepctedenddate", sqlalchemy.Date),
     sqlalchemy.Column("country", sqlalchemy.String),
     sqlalchemy.Column("city", sqlalchemy.String),
-    sqlalchemy.Column("categoryid", sqlalchemy.String),
+    sqlalchemy.Column("categoryid", sqlalchemy.ARRAY(Integer)),
     sqlalchemy.Column("collaboratorsid", sqlalchemy.ARRAY(Integer)),
-    sqlalchemy.Column("photosid", sqlalchemy.String),
+    sqlalchemy.Column("photosid", sqlalchemy.ARRAY(String)),
     sqlalchemy.Column("phases", sqlalchemy.Integer),
-    sqlalchemy.Column("donorsid", sqlalchemy.Integer),
+    sqlalchemy.Column("donorsid", sqlalchemy.ARRAY(Integer)),
     sqlalchemy.Column("serviceid", sqlalchemy.String),
 
     # sqlalchemy.Column("services" ),

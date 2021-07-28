@@ -1,3 +1,4 @@
+from logging import error
 from typing import List
 from fastapi import APIRouter, status, Request
 from starlette.responses import JSONResponse
@@ -21,7 +22,10 @@ async def get_projects_by_user(request: Request, user_id: str):
     query = await ProjectService.get_all_projects_by_user(request, user_id)
     return JSONResponse(status_code=status.HTTP_200_OK, content={"data": query})
 
-@router.post("/new/", status_code=status.HTTP_201_CREATED, response_description="Create new project", response_model=Project)
+@router.post("/new", status_code=status.HTTP_201_CREATED, response_description="Create new project", response_model=Project)
 async def create_project(request: Request, project: ProjectIn):
-    query = await ProjectService.create_project(request, project)
-    return JSONResponse(status_code=status.HTTP_201_CREATED, content={"data": query})
+    try:
+        query = await ProjectService.create_project(request, project)
+        return JSONResponse(status_code=status.HTTP_201_CREATED, content={"data": query})
+    except:
+        print('error')

@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 import databases
 import sqlalchemy
-from router import projects_router, users_router, categories_router
+from router import projects_router, services_router, users_router, categories_router
 
 # CONNECTING TO DB 
 
@@ -28,27 +28,6 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-# database.disconnect()
-# @app.on_event("startup")
-# async def startup() -> None:
-#     database.disconnect()
-#     # database_ = app.state.database
-    # if not database.is_connected:
-    #     await database.connect()
-
-#     # try:
-#     #     await database.connect()
-#     #     print('connected')
-#     # except:
-#     #     print("An error occured")
-
-# @app.on_event("shutdown")
-# async def shutdown() -> None:
-#     # database_ = app.state.database
-#     if database.is_connected:
-#         await database.disconnect()
-
-
 @app.get("/")
 def hello():
     return {"message": "Hello this is the base project."}
@@ -56,3 +35,4 @@ def hello():
 app.include_router(router=projects_router.router) 
 app.include_router(router=users_router.router) 
 app.include_router(router=categories_router.router) 
+app.include_router(router=services_router.router) 
