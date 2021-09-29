@@ -19,12 +19,14 @@ class ProjectService():
 
     async def create_project(request: Request, obj_in: ProjectIn) -> Optional[Project]:
         try:
+            print(obj_in)
             new_project = await CRUDProject.post_project(request, obj_in)
             if not new_project:
                 raise HTTPException(
                 status_code=404, 
                 detail="Could not be created"
             )
+            print(new_project)
             return new_project
         except:
             print('error at service')

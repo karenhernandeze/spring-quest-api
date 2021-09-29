@@ -1,4 +1,3 @@
-from datetime import date
 from typing import List, Optional
 from pydantic import BaseModel
 
@@ -8,8 +7,8 @@ class Project(BaseModel):
     projectName: Optional[str] = None
     projectType: Optional[str] = None
     description: Optional[str] = None
-    exepctedStartDate: Optional[date] = None
-    exepctedEndDate: Optional[date] = None
+    exepctedStartDate: Optional[str] = None
+    exepctedEndDate: Optional[str] = None
     country: Optional[str] = None
     city: Optional[str] = None
     categoryId: Optional[List[int]] = None
@@ -24,8 +23,8 @@ class ProjectIn(BaseModel):
     projectName: Optional[str] = None
     projectType: Optional[str] = None
     description: Optional[str] = None
-    exepctedStartDate: Optional[date] = None
-    exepctedEndDate: Optional[date] = None
+    exepctedStartDate: Optional[str] = None
+    exepctedEndDate: Optional[str] = None
     country: Optional[str] = None
     city: Optional[str] = None
     categoryId: Optional[List[int]] = None
@@ -59,8 +58,8 @@ class ProjectId(BaseModel):
     projectName: Optional[str] = None
     projectType: Optional[str] = None
     description: Optional[str] = None
-    exepctedStartDate: date
-    exepctedEndDate: date
+    exepctedStartDate: Optional[str] = None
+    exepctedEndDate: Optional[str] = None
     country: Optional[str] = None
     city: Optional[str] = None
     categoryId: Optional[List[int]] = None

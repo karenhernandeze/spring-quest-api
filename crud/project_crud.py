@@ -31,9 +31,14 @@ class CRUDProject():
 
     async def post_project(request: Request, obj_in: ProjectIn) -> Optional[Project]:
         try:
+            print(1)
             if not database.is_connected:
                 await database.connect()
+            print(2)
+            
             query = project.insert() 
+            print(3)
+
             values = {
                 "userid": obj_in.userId,
                 "projectname": obj_in.projectName,
@@ -50,8 +55,14 @@ class CRUDProject():
                 "donorsid": obj_in.donorsid,
                 "serviceid": obj_in.serviceId
             }
+            print(4.1)
+
             new_project = await database.execute(query=query, values=values)
+            print(4)
+            
             await database.disconnect()
+            print(5)
+
             return new_project
-        except:
+        except error:
             print('error at crud')

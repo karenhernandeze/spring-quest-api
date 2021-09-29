@@ -26,6 +26,7 @@ async def get_projects_by_user(request: Request, user_id: str):
 async def create_project(request: Request, project: ProjectIn):
     try:
         query = await ProjectService.create_project(request, project)
+        print(query)
         return JSONResponse(status_code=status.HTTP_201_CREATED, content={"data": query})
     except:
         print('error')
